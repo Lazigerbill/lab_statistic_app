@@ -39,3 +39,6 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'devise'
+
+gem 'hirb', '~> 0.7.3'
+gem 'quiet_assets', '~> 1.1.0'
