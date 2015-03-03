@@ -1,14 +1,16 @@
-.jumbotron {
-	height: 800px;
+.devise-form {
+	height: 1000px;
 	background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6) ), url("Lib01.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center; 
+	color: white;
 }
 
-.jumbo_content {
-	color: white;
-
+.devise-box {
+	border: 1.5px solid white;
+	border-radius: 8px;
+	background-color: rgba(0,0,0,0.5);
 }
 
 

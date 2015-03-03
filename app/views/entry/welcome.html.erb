@@ -1,4 +1,4 @@
-<div class="jumbotron">
+<div class="background">
  	<div class="jumbo_content container-fluid"> 
 	 	<img src="assets/utsc_brand.png" alt="" id="brand"><h1>Finance Lab Statistics</h1>
 	 	<p>Life it is not just a series of calculations and a sum total of statistics, it's about experience, it's about participation, it is something more complex and more interesting than what is obvious.</p>
@@ -13,8 +13,7 @@
 	 	  		<%= f.label :password, "Password"%> <br>
 	 	  		<%= f.password_field :password, :placeholder=>"Password", :class=>"form-control" %>
 			</div>	 	  		
-	 	 <div class="col-md-12"> <%= f.check_box :remember_me %>
-	 	 	 	  <%= f.label :remember_me %> <br>
+	 	 <div class="col-md-12"> 
 	 	 	 	  <%= f.submit 'Sign in', :class=>"btn btn-primary btn-lg" %> <br>
 	 	 	 	  <%= link_to "Forgot your password?", new_password_path(:user) %> <br>
 	 	 	 	  <%= link_to "Sign up for a new user account", new_user_registration_path %>

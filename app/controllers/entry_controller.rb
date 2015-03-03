@@ -1,10 +1,10 @@
 class EntryController < ApplicationController
-  before_action :authenticate_user!, :except => :welcome
+  before_action :authenticate_user!
   
   def welcome
     
   end
-  
+
   def index
   end
 
