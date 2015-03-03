@@ -18,3 +18,7 @@
 	/*float: left;*/
 	height: 5em;
 }
+
+.devise-error {
+	color: red;
+}
