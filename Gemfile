@@ -43,3 +43,4 @@ gem 'devise'
 gem 'hirb', '~> 0.7.3'
 gem 'quiet_assets', '~> 1.1.0'
 gem "twitter-bootstrap-rails"
+gem "paperclip", "~> 4.2"
