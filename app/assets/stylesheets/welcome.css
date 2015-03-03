@@ -22,3 +22,16 @@
 .devise-error {
 	color: red;
 }
+
+#preview {
+/*	height: 85px;
+	width: 85px;*/
+	/*border: 1px solid white;*/
+	/*display: inline-block;*/
+	/*position: relative;*/
+	/*top: -85px;*/
+}
+
+#upload-box {
+	/*displa: ;y: inline-block;*/
+}

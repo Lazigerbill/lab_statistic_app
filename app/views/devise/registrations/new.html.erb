@@ -5,6 +5,15 @@
 	  <div class="devise-error">
 	  	<%= devise_error_messages! %>
 		</div>
+	  
+
+		<div class="form-group" id="upload-box">
+		  <%= f.label :avatar, "Profile Picture" %>
+		  <%= f.file_field :avatar, :id=>"pic-upload" %>
+	 </div>
+
+	  <div id="preview">
+	 	</div> 
 
 	<div class="row">		
 		<div class="form-group col-sm-6">
