@@ -1,4 +1,5 @@
-$(document).ready(function(){
+var ready;
+ready = function() { 
   $('#pic-upload').on('change', function(event) {
     var files = event.target.files;
     var image = files[0]
@@ -16,5 +17,7 @@ $(document).ready(function(){
 
   $('#cropbox').Jcrop();
 
-});
+};
 
+$(document).ready(ready);
+$(document).on('page:load', ready);
