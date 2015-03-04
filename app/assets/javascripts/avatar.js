@@ -13,5 +13,8 @@ $(document).ready(function(){
     reader.readAsDataURL(image);
     console.log(files);
   });
+
+  $('#cropbox').Jcrop();
+
 });
 
