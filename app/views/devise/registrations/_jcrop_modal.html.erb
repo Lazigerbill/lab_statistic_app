@@ -6,16 +6,21 @@
 	      <h4 class="modal-title">Crop profile picture</h4>
 	    </div>
 	    <div class="modal-body">
-			<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-				<%= f.cropbox :avatar, :id=>"cropbox", :height=>"100px" %>
-    		<%= f.crop_preview :avatar %>
+			<% if current_user.avatar_file_name != nil %>
+				<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+					<%= f.cropbox :avatar, :id=>"cropbox" %> <br>
+					
+				<div class="form-group"><%= f.label :current_password, "Password" %> <br />
+				  <%= f.password_field :current_password, :class=>"form-control", :placeholder=>"we need your password to confirm your changes" %>
+				</div>
 
 
-
-	      <div class="modal-footer">
-	      	<%= f.submit "Update", :class=>"btn btn-primary btn-lg" %>
-	      	<% end %>
-	        <button class="btn btn btn-danger cancel_scanner" data-dismiss="modal" aria-hidden="true">Cancel</button>
+		      <div class="modal-footer">
+	    		<%#= f.crop_preview :avatar %>
+		      	<%= f.submit "Update", :class=>"btn btn btn-primary" %>
+		      	<% end %>
+		     <% end %> 	
+	        <button class="btn btn btn-danger" data-dismiss="modal" aria-hidden="true">Cancel</button>
 	      </div>
 	    </div>
 	  </div>
