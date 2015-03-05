@@ -6,6 +6,7 @@ class RecordsController < ApplicationController
   end
 
   def new
+    @record = Record.new
   end
 
   def create
