@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  contact_type: MyString
+  patron: MyString
+  question: MyString
+  time_spent: 1
+  satisfaction: false
+
+two:
+  user_id: 
+  contact_type: MyString
+  patron: MyString
+  question: MyString
+  time_spent: 1
+  satisfaction: false
