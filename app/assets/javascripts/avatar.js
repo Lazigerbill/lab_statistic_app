@@ -17,7 +17,24 @@ ready = function() {
 
   $('#cropbox').Jcrop();
 
-};
+  $('#crop-modal-trigger').css('cursor', 'pointer');
+
+  $('#crop-modal-trigger').on("mouseenter", function(){
+    $(this).css({
+      "opacity":"0.5"
+    });
+  });
+  $('#crop-modal-trigger').on("mouseleave", function(){
+    $(this).css({
+      "opacity":"1"
+    });
+  });
+    
+  $('#crop-modal-trigger').click(function(){
+    $('#jcrop-modal').modal('show');
+  });
+
+}
 
 $(document).ready(ready);
 $(document).on('page:load', ready);

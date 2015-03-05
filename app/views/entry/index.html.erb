@@ -1,5 +1,6 @@
 <% if user_signed_in? %>
  	<li>
+		<%= link_to 'Edit profile', edit_user_registration_path %>
   		<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
   	</li>
 <% else %>
@@ -8,7 +9,6 @@
   	</li>
 <% end %>
 
-<%= link_to 'Edit profile', edit_user_registration_path %>
 
 <h1>Entry#index</h1>
 <h2>Hello <%=current_user.email%>!!</h2>
