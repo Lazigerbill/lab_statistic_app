@@ -10,6 +10,13 @@ class RecordsController < ApplicationController
   end
 
   def create
+    @record = current_user.records.build(record_params)
+    if @record.save
+      redirect_to new_record_path, notice: 'Record created successfully'
+    else
+      render 'records/new'
+    end
+
   end
 
   def edit
@@ -21,3 +28,10 @@ class RecordsController < ApplicationController
   def destroy
   end
 end
+
+private
+def record_params
+  params.require(:record).permit(:user_id, :contact_type, :patron, :question, :time_spent, :satisfaction, :bloomberg, :capital_iq, :factset, :thomsonone, :other)
+end
+
+    
