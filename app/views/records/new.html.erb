@@ -13,9 +13,8 @@
 	<%= form_for @record do |f| %>
 
 	<% if @record.errors.any? %>
-    <div id="error_explanation">
+    <div class="alert alert-danger" role="alert" id="error_explanation">
       <h2><%= pluralize(@record.errors.count, "error") %> prohibited this form from being saved:</h2>
-
       <ul>
       <% @record.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -71,11 +70,11 @@
 		<div class="panel-body">
 			<!-- Question 3 -->
 			<%= f.label :question, "What is the Inquiry about?" %> <br>
-			<%= f.select :question, [['Please choice one of the following...', '', :selected=>true,:disabled=>true],['General Inquiries','general'],['Technical Issues','techincal'],['Career Advice','career'],['Academic & Researches','research'],['Other','other']], {},:class=>'form-control' %>
+			<%= f.select :question, options_for_select([['Please choice one of the following...', '', :selected=>true, :disabled=>true],['General Inquiries','general'],['Technical Issues','techincal'],['Career Advice','career'],['Academic & Researches','research'],['Other','other']]), {},:class=>'form-control' %>
 			<br>
 		
-			<%= f.text_area :question, :id=>"research-textbox", :placeholder=>"Please fill in course code.", :hidden=>true, :class=>"form-control" %>
-			<%= f.text_area :question, :id=>"other-textbox", :placeholder=>"Please fill in details.", :hidden=>true, :class=>"form-control" %>
+			<%#= f.text_area :question, :id=>"research-textbox", :placeholder=>"Please fill in course code.", :hidden=>true, :class=>"form-control" %>
+			<%#= f.text_area :question, :id=>"other-textbox", :placeholder=>"Please fill in details.", :hidden=>true, :class=>"form-control" %>
 
 <!-- 			<%#= f.label :question, "What is the Inquiry about?" %> <br>
 			<div class="radio container">
@@ -145,12 +144,12 @@
 	<!-- Question 6 -->
 	<%= f.label :satisfaction, "Was the patron satisfied?" %> <br>
 	<div class="radio-inline">
-		<%= f.radio_button :satisfaction, 'yes' %>
-		<%= f.label :satisfaction, "Yes", :value=>'yes' %>
+		<%= f.radio_button :satisfaction, true %>
+		<%= f.label :satisfaction, "Yes", :value=>true %>
 	</div>
 	<div class="radio-inline">
-		<%= f.radio_button :satisfaction, 'no' %>
-		<%= f.label :satisfaction, "No", :value=>'no' %>
+		<%= f.radio_button :satisfaction, false %>
+		<%= f.label :satisfaction, "No", :value=>false %>
 	</div>	
 	<br>
 

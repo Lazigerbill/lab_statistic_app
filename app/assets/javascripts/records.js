@@ -4,19 +4,19 @@
 
 var ready;
 ready = function() { 
-	$('#record_question').change(function(){
-		// alert($(this).val());
-		if ($(this).val()==='research') {
-			$('#research-textbox').show();
-		} else {
-			$('#research-textbox').hide();
-		}
-		if ($(this).val()==='other') {
-			$('#other-textbox').show();
-		} else {
-			$('#other-textbox').hide();
-		}
-	})
+	// $('#record_question').change(function(){
+	// 	// alert($(this).val());
+	// 	if ($(this).val()==='research') {
+	// 		$('#research-textbox').show();
+	// 	} else {
+	// 		$('#research-textbox').hide();
+	// 	}
+	// 	if ($(this).val()==='other') {
+	// 		$('#other-textbox').show();
+	// 	} else {
+	// 		$('#other-textbox').hide();
+	// 	}
+	// })
 	
 	
 }
