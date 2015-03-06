@@ -61,7 +61,7 @@
 			<%= f.label :question, "What is the Inquiry about?" %> <br>
 			<%= f.select :question, [['Please choice one of the following...', '', :selected=>true,:disabled=>true],['General Inquiries','general'],['Technical Issues','techincal'],['Career Advice','career'],['Academic & Researches','research'],['Other','other']] %>
 			<br>
-			<br>
+		
 			<%= f.text_area :question, :id=>"research-textbox", :placeholder=>"Please fill in course code.", :hidden=>true, :class=>"form-control" %>
 			<%= f.text_area :question, :id=>"other-textbox", :placeholder=>"Please fill in details.", :hidden=>true, :class=>"form-control" %>
 
@@ -85,6 +85,22 @@
 				<%#= f.text_field :question %>
 			</div> -->
 			<br>
+			
+			<%= f.label :time_spent, "How long did it take you to resolve patron's question?" %> <br>
+						<div class="radio-inline">
+							<%= f.radio_button :time_spent, "general" %>
+							<%= f.label :time_spent, "General", :value=>"general" %>
+						</div>
+						<div class="radio-inline">
+							<%= f.radio_button :time_spent, "technical" %>
+							<%= f.label :time_spent, "Technical", :value=>"technical" %>
+						</div>	
+						<div class="radio-inline">
+							<%#= f.radio_button :time_spent, "acedemic" %>
+							<%#= f.label :time_spent, "Research", :value=>"acedemic" %>
+							<%#= f.text_field :question, :placeholder=>"Course code" %>
+						</div>	
+
 
 		</div>
 	</div>
