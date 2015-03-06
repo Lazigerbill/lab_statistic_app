@@ -59,7 +59,7 @@
 		<div class="panel-body">
 			<!-- Question 3 -->
 			<%= f.label :question, "What is the Inquiry about?" %> <br>
-			<%= f.select :question, [['Please choice one of the following...', '', :selected=>true,:disabled=>true],['General Inquiries','general'],['Technical Issues','techincal'],['Career Advice','career'],['Academic & Researches','research'],['Other','other']] %>
+			<%= f.select :question, [['Please choice one of the following...', '', :selected=>true,:disabled=>true],['General Inquiries','general'],['Technical Issues','techincal'],['Career Advice','career'],['Academic & Researches','research'],['Other','other']], {},:class=>'form-control' %>
 			<br>
 		
 			<%= f.text_area :question, :id=>"research-textbox", :placeholder=>"Please fill in course code.", :hidden=>true, :class=>"form-control" %>
@@ -85,35 +85,65 @@
 				<%#= f.text_field :question %>
 			</div> -->
 			<br>
-			
+			<!-- Question 4 -->
 			<%= f.label :time_spent, "How long did it take you to resolve patron's question?" %> <br>
-						<div class="radio-inline">
-							<%= f.radio_button :time_spent, "general" %>
-							<%= f.label :time_spent, "General", :value=>"general" %>
-						</div>
-						<div class="radio-inline">
-							<%= f.radio_button :time_spent, "technical" %>
-							<%= f.label :time_spent, "Technical", :value=>"technical" %>
-						</div>	
-						<div class="radio-inline">
-							<%#= f.radio_button :time_spent, "acedemic" %>
-							<%#= f.label :time_spent, "Research", :value=>"acedemic" %>
-							<%#= f.text_field :question, :placeholder=>"Course code" %>
-						</div>	
-
-
+			<div class="radio-inline">
+				<%= f.radio_button :time_spent, 3, :checked=>true %>
+				<%= f.label :time_spent, "3 mins or less", :value=>3 %>
+			</div>
+			<div class="radio-inline">
+				<%= f.radio_button :time_spent, 20 %>
+				<%= f.label :time_spent, "Bewteen 3 to 20 mins", :value=>20 %>
+			</div>	
+			<div class="radio-inline">
+				<%= f.radio_button :time_spent, 30 %>
+				<%= f.label :time_spent, "More than 30 mins", :value=>30 %>
+			</div>
 		</div>
 	</div>
 
 	<div class="panel panel-primary">
 		<div class="panel-heading">
-			<h3 class="panel-title">Panel title</h3>
+			<h3 class="panel-title">Lab resources</h3>
 		</div>
 		<div class="panel-body">
-			Panel content
+			<div class="checkbox-inline">
+				<%= f.check_box :bloomberg %>
+				<%= f.label :bloomberg, image_tag('Bloomberg.png', :height=>'50px') %>
+			</div>
+			<div class="checkbox-inline">
+				<%= f.check_box :capital_iq %>
+				<%= f.label :capital_iq, image_tag('capIQ.png', :height=>'50px') %>
+			</div>
+			<div class="checkbox-inline">
+				<%= f.check_box :factset %>
+				<%= f.label :factset, image_tag('factsetlogo.png', :height=>'50px') %>
+			</div>
+			<div class="checkbox-inline">
+				<%= f.check_box :thomsonone %>
+				<%= f.label :thomsonone, image_tag('thomson.jpeg', :height=>'50px') %>
+			</div>
+			<div class="checkbox-inline">
+				<%= f.check_box :other %>
+				<%= f.text_area :other, :placeholder=>"Other...", :class=>"form-control" %>
+			</div>
 		</div>
 	</div>
+	
+	<!-- Question 6 -->
+	<%= f.label :satisfaction, "Was the patron satisfied?" %> <br>
+	<div class="radio-inline">
+		<%= f.radio_button :satisfaction, 'yes' %>
+		<%= f.label :satisfaction, "Yes", :value=>'yes' %>
+	</div>
+	<div class="radio-inline">
+		<%= f.radio_button :satisfaction, 'no' %>
+		<%= f.label :satisfaction, "No", :value=>'no' %>
+	</div>	
+	<br>
 
+	<%= f.submit "Save", :class=>"btn btn-primary btn-lg" %>
+	
 	<% end %>
 
 
