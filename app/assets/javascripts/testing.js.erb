@@ -1,0 +1,16 @@
+var ready;
+ready = function() { 
+
+	runClock();
+
+}
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
+
+function runClock(){
+	t = setTimeout(function(){
+		$('#timeNow').text(moment().format('MMMM Do YYYY, h:mm:ss a'));
+		runClock();
+	}, 1000)
+}

@@ -16,10 +16,10 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">RESET<span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="/records/new">New Form<span class="sr-only">(current)</span></a></li>
       </ul>
 
-      <p class="nav navbar-text"><%= Time.now().strftime("%A, %d %b %Y %l:%M %p") %></p>
+      <p class="nav navbar-text" id="timeNow"></p>
 
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
