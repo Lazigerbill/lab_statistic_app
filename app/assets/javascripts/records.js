@@ -19,17 +19,15 @@ ready = function() {
 	});
 	
 	// to overwrite 'other lab resource' when checkbox is checked
-	$('#other-res-textbox').keyup(function(){
+	$('#record_other').keyup(function(){
 		if ($(this).val()) {
-			$('#record_other').prop("checked", true);
-			$('#record_other').val($(this).val());
+			$('#other-res-checkbox').prop("checked", true);
 		} else {
 			$('#record_other').prop("checked", false);
-			$('#record_other').val(null);
 		}
 	})
-	$("#record_other ").change(function(){
-		$('#other-res-textbox').val('');
+	$("#other-res-checkbox").change(function(){
+		$('#record_other').val('');
 	})
 
 	
