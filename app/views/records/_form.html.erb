@@ -1,0 +1,135 @@
+<%= form_for @record do |f| %>
+
+	<% if @record.errors.any? %>
+		<div class="alert alert-danger" role="alert" id="error_explanation">
+  		<h2><%= pluralize(@record.errors.count, "error") %> prohibited this form from being saved:</h2>
+		  <ul>
+		  		<% @record.errors.full_messages.each do |msg| %>
+		    		<li><%= msg %></li>
+		  		<% end %>
+		  </ul>
+		</div>
+	<% end %>
+	
+	<!-- First Panel -->
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title">Inquiry format</h3>
+		</div>
+		<div class="panel-body">
+			<!-- Question 1 -->
+			<%= f.label :contact_type, "How is the inquiry recieved?" %> <br>
+			<div class="radio-inline">
+				<%= f.radio_button :contact_type, "phone" %>
+				<%= f.label :contact_type, "By phone", :value=>"phone", :style=>'none' %>
+			</div>
+			<div class="radio-inline">
+				<%= f.radio_button :contact_type, "email" %>
+				<%= f.label :contact_type, "By e-mail", :value=>"email" %>
+			</div>
+			<div class="radio-inline">
+				<%= f.radio_button :contact_type, "person", :checked => true %>
+				<%= f.label :contact_type, "In person", :value=>"person" %>
+			</div>
+			<br>
+			<br>
+			
+			<!-- Question 2 -->
+			<%= f.label :patron, "Tell us about the patron." %> <br>
+			<div class="radio-inline">
+				<%= f.radio_button :patron, "student", :checked => true %>
+				<%= f.label :patron, "Student", :value=>"student" %>
+			</div>
+			<div class="radio-inline">
+				<%= f.radio_button :patron, "faculty" %>
+				<%= f.label :patron, "Faculty member", :value=>"faculty" %>
+			</div>
+			<div class="radio-inline">
+				<%= f.radio_button :patron, "other" %>
+				<%= f.label :patron, "Other", :value=>"other" %>
+			</div>
+
+		</div>
+	</div>
+	
+	<!-- Second panel -->
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title">Inquiry detail</h3>
+		</div>
+		<div class="panel-body">
+			<!-- Question 3 -->
+			<%= f.label :question, "What is the Inquiry about?" %> <br>
+			<%= f.select :question, options_for_select([['Please choice one of the following...', '', :selected=>true, :disabled=>true],['General Inquiries','general'],['Technical Issues','techincal'],['Career Advice','career'],['Academic & Researches','research'],['Other','other', :id=>'other-inquiry-option']]), {},:class=>'form-control' %>
+			<br>
+		
+			<%= text_area_tag "other-inquiry-textbox", '',:placeholder=>"Please fill in the details.", :hidden=>true, :class=>"form-control" %>
+
+			<div class="form-inline">
+				<%= f.label :course_code %>
+				<%= f.text_field :course_code, :placeholder=>'*optional', :class=>"form-control" %>
+			</div>
+			<br>
+			<!-- Question 4 -->
+			<%= f.label :time_spent, "How long did it take you to resolve patron's question?" %> <br>
+			<div class="radio-inline">
+				<%= f.radio_button :time_spent, 3, :checked=>true %>
+				<%= f.label :time_spent, "3 mins or less", :value=>3 %>
+			</div>
+			<div class="radio-inline">
+				<%= f.radio_button :time_spent, 20 %>
+				<%= f.label :time_spent, "Bewteen 3 to 20 mins", :value=>20 %>
+			</div>	
+			<div class="radio-inline">
+				<%= f.radio_button :time_spent, 30 %>
+				<%= f.label :time_spent, "More than 30 mins", :value=>30 %>
+			</div>
+		</div>
+	</div>
+
+	<!-- Third panel -->
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title">Lab resources</h3>
+		</div>
+		<div class="panel-body">
+			<!-- Quesiton 5 -->
+			<div class="checkbox-inline">
+				<%= f.check_box :bloomberg %>
+				<%= f.label :bloomberg, image_tag('Bloomberg.png', :height=>'50px') %>
+			</div>
+			<div class="checkbox-inline">
+				<%= f.check_box :capital_iq %>
+				<%= f.label :capital_iq, image_tag('capIQ.png', :height=>'50px') %>
+			</div>
+			<div class="checkbox-inline">
+				<%= f.check_box :factset %>
+				<%= f.label :factset, image_tag('factsetlogo.png', :height=>'50px') %>
+			</div>
+			<div class="checkbox-inline">
+				<%= f.check_box :thomsonone %>
+				<%= f.label :thomsonone, image_tag('thomson.jpeg', :height=>'50px') %>
+			</div>
+			<div class="checkbox-inline">
+				<%= f.check_box :other %>
+				<%= text_area_tag "other-res-textbox", '', :placeholder=>"Other...", :class=>"form-control" %>
+			</div>
+		</div>
+	</div>
+
+	<!-- Question 6 -->
+	<%= f.label :satisfaction, "Was the patron satisfied?" %> <br>
+	<div class="radio-inline">
+		<%= f.radio_button :satisfaction, true %>
+		<%= f.label :satisfaction, "Yes", :value=>true %>
+	</div>
+	<div class="radio-inline">
+		<%= f.radio_button :satisfaction, false %>
+		<%= f.label :satisfaction, "No", :value=>false %>
+	</div>	
+	<br>
+	<br>
+
+	<%= f.submit "Save", :class=>"btn btn-primary btn-lg" %> 
+
+	<% end %> <br>

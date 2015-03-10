@@ -3,6 +3,7 @@ class RecordsController < ApplicationController
 
   
   def index
+    @records = current_user.records.all
   end
 
   def new
@@ -20,6 +21,7 @@ class RecordsController < ApplicationController
   end
 
   def edit
+    @record = Record.find(params[:id])
   end
 
   def update
