@@ -1,5 +1,7 @@
 <div class="jumbotron">
+	<%= image_tag current_user.avatar.url(:thumb) %>
 	<h1>Hello, I am <%= current_user.first_name %>!</h1>
+	<h2>It's <span id="hourNow"></span>, need help on <em id="typingEffect"></em></h2>
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis libero magni veniam, totam architecto distinctio assumenda aliquid eveniet accusantium amet rerum fugiat. Sint libero odio sed enim facilis unde possimus.</p>
 	<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
 </div>

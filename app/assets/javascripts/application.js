@@ -15,6 +15,7 @@
 //= require papercrop
 //= require jquery_ujs
 //= require moment
+//= require typed
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .

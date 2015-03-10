@@ -2,7 +2,14 @@ var ready;
 ready = function() { 
 
 	runClock();
-
+	$(function(){
+	       $("#typingEffect").typed({
+	           strings: ["exam preparation?", "career advice?", "research?", "assignments?"],
+	           typeSpeed: 150,
+	           backDelay: 1000,
+	           loop: true
+	       });
+	   });
 }
 
 $(document).ready(ready);
@@ -11,6 +18,7 @@ $(document).on('page:load', ready);
 function runClock(){
 	t = setTimeout(function(){
 		$('#timeNow').text(moment().format('MMMM Do YYYY, h:mm:ss a'));
+		$('#hourNow').text(moment().format('dddd ha'));
 		runClock();
 	}, 1000)
 }
