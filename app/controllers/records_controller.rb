@@ -36,7 +36,7 @@ end
 
 private
 def record_params
-  params.require(:record).permit(:user_id, :contact_type, :patron, :question, :time_spent, :satisfaction, :bloomberg, :capital_iq, :factset, :thomsonone, :other, :course_code)
+  params.require(:record).permit(:user_id, :contact_type, :patron, :question, :time_spent, :satisfaction, :bloomberg, :capital_iq, :factset, :thomsonone, :other_inquiry_details, :course_code, :other_res, :other_res_details)
 end
 
     

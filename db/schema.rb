@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150310033045) do
+ActiveRecord::Schema.define(version: 20150310192115) do
 
   create_table "records", force: true do |t|
     t.integer  "user_id"
@@ -26,8 +26,10 @@ ActiveRecord::Schema.define(version: 20150310033045) do
     t.boolean  "capital_iq"
     t.boolean  "factset"
     t.boolean  "thomsonone"
-    t.string   "other"
     t.string   "course_code"
+    t.string   "other_inquiry_details"
+    t.boolean  "other_res"
+    t.string   "other_res_details"
   end
 
   add_index "records", ["user_id"], name: "index_records_on_user_id"

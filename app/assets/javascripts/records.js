@@ -7,27 +7,24 @@ ready = function() {
 	// hide/unhide and 'other' for inquiry type
 	$('#record_question').change(function(){
 		if ($(this).val()==='other') {
-			$('#other-inquiry-textbox').show();
+			$('#record_other_inquiry_details').show();
 		} else {
-			$('#other-inquiry-textbox').hide();
-			$('#other-inquiry-option').val('other');
-			$('#other-inquiry-textbox').val('');
+			$('#record_other_inquiry_details').hide();
+			$('#record_other_inquiry_details').val('');
 		}
 	})
-	$('#other-inquiry-textbox').keyup(function(){
-		$('#other-inquiry-option').val("other - " + $('#other-inquiry-textbox').val());	
-	});
+
 	
 	// to overwrite 'other lab resource' when checkbox is checked
-	$('#record_other').keyup(function(){
+	$('#record_other_res_details').keyup(function(){
 		if ($(this).val()) {
-			$('#other-res-checkbox').prop("checked", true);
+			$('#record_other_res').prop("checked", true);
 		} else {
-			$('#record_other').prop("checked", false);
+			$('#record_other_res').prop("checked", false);
 		}
 	})
-	$("#other-res-checkbox").change(function(){
-		$('#record_other').val('');
+	$('#record_other_res').change(function(){
+		$('#record_other_res_details').val('');
 	})
 
 	

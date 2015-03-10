@@ -21,14 +21,14 @@
 			<%= f.label :contact_type, "How is the inquiry recieved?" %> <br>
 			<div class="radio-inline">
 				<%= f.radio_button :contact_type, "phone" %>
-				<%= f.label :contact_type, "By phone", :value=>"phone", :style=>'none' %>
+				<%= f.label :contact_type, "By phone", :value=>"phone"%>
 			</div>
 			<div class="radio-inline">
 				<%= f.radio_button :contact_type, "email" %>
 				<%= f.label :contact_type, "By e-mail", :value=>"email" %>
 			</div>
 			<div class="radio-inline">
-				<%= f.radio_button :contact_type, "person", :checked => true %>
+				<%= f.radio_button :contact_type, "person" %>
 				<%= f.label :contact_type, "In person", :value=>"person" %>
 			</div>
 			<br>
@@ -62,8 +62,11 @@
 			<%= f.label :question, "What is the Inquiry about?" %> <br>
 			<%= f.select :question, options_for_select([['General Inquiries','general'],['Technical Issues','techincal'],['Career Advice','career'],['Academic & Researches','research'],['Other','other', :id=>'other-inquiry-option']], :selected => f.object.question), {:prompt=>"Please choice one of the following..."}, :class=>'form-control' %>
 			<br>
-		
-			<%= text_area_tag "other-inquiry-textbox", '',:placeholder=>"Please fill in the details.", :hidden=>true, :class=>"form-control" %>
+			<% if @record.other_inquiry_details.nil? %>
+				<%= f.text_area :other_inquiry_details, :placeholder=>"Please fill in the details.", :hidden=>true, :class=>"form-control" %> 
+			<% else %>
+				<%= f.text_area :other_inquiry_details, :placeholder=>"Please fill in the details.",  :class=>"form-control" %> <br>
+			<% end %>
 
 			<div class="form-inline">
 				<%= f.label :course_code %>
@@ -111,8 +114,8 @@
 				<%= f.label :thomsonone, image_tag('thomson.jpeg', :height=>'50px') %>
 			</div>
 			<div class="checkbox-inline">
-				<%= check_box_tag "other-res-checkbox" %>
-				<%= f.text_area :other, :placeholder=>"Other...", :class=>"form-control" %>
+				<%= f.check_box :other_res %>
+				<%= f.text_area :other_res_details, :placeholder=>"Other...", :class=>"form-control" %>
 			</div>
 		</div>
 	</div>
