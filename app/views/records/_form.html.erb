@@ -62,7 +62,7 @@
 			<%= f.label :question, "What is the Inquiry about?" %> <br>
 			<%= f.select :question, options_for_select([['General Inquiries','general'],['Technical Issues','techincal'],['Career Advice','career'],['Academic & Researches','research'],['Other','other', :id=>'other-inquiry-option']], :selected => f.object.question), {:prompt=>"Please choice one of the following..."}, :class=>'form-control' %>
 			<br>
-			<% if @record.other_inquiry_details.nil? %>
+			<% if @record.other_inquiry_details.blank? %>
 				<%= f.text_area :other_inquiry_details, :placeholder=>"Please fill in the details.", :hidden=>true, :class=>"form-control" %> 
 			<% else %>
 				<%= f.text_area :other_inquiry_details, :placeholder=>"Please fill in the details.",  :class=>"form-control" %> <br>
