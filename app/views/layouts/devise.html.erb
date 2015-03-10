@@ -7,10 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="devise-form container-fluid">
-		<p class="notice alert-success"><%= notice %></p>
+	<% if flash[:notice] %>
+		<p class="alert alert-success"><%= notice %></p>
+	<% end %>	
+	<% if flash[:alert] %>
 		<p class="alert alert-danger"><%= alert %></p>
-	<%= link_to image_tag("utsc_brand.png", :id=>"brand"), "http://www.utsc.utoronto.ca/home/" %>
-	<h1>Finance Lab Statistics</h1>
+	<% end %>	
+	<div class='row col-md-offset-3'>
+		<%= link_to image_tag("utsc_brand.png", :id=>"brand"), "http://www.utsc.utoronto.ca/home/" %>
+		<h1 id="finlab-title">Finance Lab Statistics</h1>
+	</div>
 	<!-- <p>Life it is not just a series of calculations and a sum total of statistics, it's about experience, it's about participation, it is something more complex and more interesting than what is obvious.</p> -->
 	<br>
 	<div class="devise-box col-sm-6 col-sm-offset-3">

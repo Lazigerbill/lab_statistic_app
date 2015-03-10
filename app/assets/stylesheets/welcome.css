@@ -15,12 +15,13 @@
 
 
 #brand {
-	/*float: left;*/
+	margin-top: 40px;
+	float: left;
 	height: 5em;
 }
 
-.devise-error {
-	color: red;
+#finlab-title{
+	margin-top: 80px;
 }
 
 #preview {
