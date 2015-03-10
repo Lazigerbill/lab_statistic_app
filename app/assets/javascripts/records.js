@@ -4,19 +4,19 @@
 
 var ready;
 ready = function() { 
-	// $('#record_question').change(function(){
-	// 	// alert($(this).val());
-	// 	if ($(this).val()==='research') {
-	// 		$('#research-textbox').show();
-	// 	} else {
-	// 		$('#research-textbox').hide();
-	// 	}
-	// 	if ($(this).val()==='other') {
-	// 		$('#other-textbox').show();
-	// 	} else {
-	// 		$('#other-textbox').hide();
-	// 	}
-	// })
+	// hide/unhide and 'other' for inquiry type
+	$('#record_question').change(function(){
+		if ($(this).val()==='other') {
+			$('#other-inquiry-textbox').show();
+		} else {
+			$('#other-inquiry-textbox').hide();
+			$('#other-inquiry-option').val('other');
+			$('#other-inquiry-textbox').val('');
+		}
+	})
+	$('#other-inquiry-textbox').keyup(function(){
+		$('#other-inquiry-option').val("other - " + $('#other-inquiry-textbox').val());	
+	});
 	
 	
 }

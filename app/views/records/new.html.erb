@@ -70,10 +70,10 @@
 		<div class="panel-body">
 			<!-- Question 3 -->
 			<%= f.label :question, "What is the Inquiry about?" %> <br>
-			<%= f.select :question, options_for_select([['Please choice one of the following...', '', :selected=>true, :disabled=>true],['General Inquiries','general'],['Technical Issues','techincal'],['Career Advice','career'],['Academic & Researches','research'],['Other','other']]), {},:class=>'form-control' %>
+			<%= f.select :question, options_for_select([['Please choice one of the following...', '', :selected=>true, :disabled=>true],['General Inquiries','general'],['Technical Issues','techincal'],['Career Advice','career'],['Academic & Researches','research'],['Other','other', :id=>'other-inquiry-option']]), {},:class=>'form-control' %>
 			<br>
 		
-			<%#= f.text_area :question, :id=>"research-textbox", :placeholder=>"Please fill in course code.", :hidden=>true, :class=>"form-control" %>
+			<%= text_area_tag "other-inquiry-textbox", '',:placeholder=>"Please fill in the details.", :hidden=>true, :class=>"form-control" %>
 			<%#= f.text_area :question, :id=>"other-textbox", :placeholder=>"Please fill in details.", :hidden=>true, :class=>"form-control" %>
 
 <!-- 			<%#= f.label :question, "What is the Inquiry about?" %> <br>
