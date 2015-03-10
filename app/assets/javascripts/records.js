@@ -18,7 +18,19 @@ ready = function() {
 		$('#other-inquiry-option').val("other - " + $('#other-inquiry-textbox').val());	
 	});
 	
+	$('#other-res-textbox').keyup(function(){
+		if ($(this).val()) {
+			$('#record_other').prop("checked", true);
+			$('#record_other').val($(this).val());
+		} else {
+			$('#record_other').prop("checked", false);
+			$('#record_other').val(null);
+		}
+	})
 	
+	$("#record_other ").change(function(){
+		$('#other-res-textbox').val('');
+	})
 }
 
 $(document).ready(ready);
