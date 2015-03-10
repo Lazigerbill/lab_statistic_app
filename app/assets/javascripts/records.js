@@ -18,6 +18,7 @@ ready = function() {
 		$('#other-inquiry-option').val("other - " + $('#other-inquiry-textbox').val());	
 	});
 	
+	// to overwrite 'other lab resource' when checkbox is checked
 	$('#other-res-textbox').keyup(function(){
 		if ($(this).val()) {
 			$('#record_other').prop("checked", true);
@@ -27,10 +28,11 @@ ready = function() {
 			$('#record_other').val(null);
 		}
 	})
-	
 	$("#record_other ").change(function(){
 		$('#other-res-textbox').val('');
 	})
+
+	
 }
 
 $(document).ready(ready);

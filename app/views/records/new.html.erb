@@ -74,6 +74,11 @@
 			<br>
 		
 			<%= text_area_tag "other-inquiry-textbox", '',:placeholder=>"Please fill in the details.", :hidden=>true, :class=>"form-control" %>
+
+			<div class="form-inline">
+				<%= f.label :course_code %>
+				<%= f.text_field :course_code, :placeholder=>'*optional', :class=>"form-control" %>
+			</div>
 			<%#= f.text_area :question, :id=>"other-textbox", :placeholder=>"Please fill in details.", :hidden=>true, :class=>"form-control" %>
 
 <!-- 			<%#= f.label :question, "What is the Inquiry about?" %> <br>
