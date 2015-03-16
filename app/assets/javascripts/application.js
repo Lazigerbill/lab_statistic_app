@@ -17,5 +17,6 @@
 //= require moment
 //= require typed
 //= require twitter/bootstrap
+//= require bootstrap-growl
 //= require turbolinks
 //= require_tree .

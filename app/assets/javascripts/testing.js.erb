@@ -10,8 +10,29 @@ ready = function() {
 	           loop: true
 	       });
 	   });
-}
 
+
+	// Growl 2.0, need to be updated...logic is good and tested
+	if ($('#flashNotice').data("notice")) {
+		var notice = $('#flashNotice').data("notice")
+		$.growl({
+			title: "<strong>Testing: </strong>",
+			message: notice,
+			placement: {
+					from: "top",
+					align: "right"
+				},
+			offset: 20,
+			spacing: 10,
+			z_index: 1031,
+			delay: 5000,
+			timer: 1000
+		});
+	}
+
+
+
+}
 $(document).ready(ready);
 $(document).on('page:load', ready);
 

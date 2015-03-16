@@ -47,3 +47,4 @@ gem "paperclip", "~> 4.2"
 gem "papercrop"
 gem 'momentjs-rails'
 gem 'typedjs-rails', '~> 1.0.2'
+gem 'bootstrap-growl-rails'
