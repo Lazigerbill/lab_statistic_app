@@ -6,6 +6,10 @@ class RecordsController < ApplicationController
     @records = current_user.records.all
   end
 
+  def my_index
+    @records = current_user.records.all
+  end
+
   def new
     @record = Record.new
   end
