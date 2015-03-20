@@ -14,6 +14,8 @@
 //= require jquery.jcrop
 //= require papercrop
 //= require jquery_ujs
+//= require dataTables/jquery.dataTables
+//= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
 //= require moment
 //= require typed
 //= require twitter/bootstrap

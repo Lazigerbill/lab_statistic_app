@@ -48,3 +48,4 @@ gem "papercrop"
 gem 'momentjs-rails'
 gem 'typedjs-rails', '~> 1.0.2'
 gem 'bootstrap-growl-rails'
+gem 'jquery-datatables-rails', '~> 3.1.1'
