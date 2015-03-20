@@ -49,3 +49,4 @@ gem 'momentjs-rails'
 gem 'typedjs-rails', '~> 1.0.2'
 gem 'bootstrap-growl-rails'
 gem 'jquery-datatables-rails', '~> 3.1.1'
+gem "highcharts-rails", "~> 3.0.0"
