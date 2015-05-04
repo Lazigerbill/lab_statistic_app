@@ -3,11 +3,23 @@ class RecordsController < ApplicationController
 
   
   def index
-    @records = current_user.records.all
+    @records = Record.all
+    @daysago = Record.created_after(7.days.ago)
+    @monthago = Record.created_after(1.month.ago)
+    respond_to do |format|
+      format.html
+      format.json {render :json => @monthago}
+    end
   end
 
   def my_index
     @records = current_user.records.all
+
+  end
+
+  def report
+
+    
   end
 
   def new

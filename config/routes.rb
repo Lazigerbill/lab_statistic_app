@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   get 'records/my_index' => 'records#my_index'
+  get 'records/report' => 'records#report'
   resources :records
 
 
