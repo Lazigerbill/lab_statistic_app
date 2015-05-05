@@ -23,4 +23,5 @@
 //= require turbolinks
 //= require highcharts
 //= require highcharts/highcharts-more 
+//= require daterangepicker
 //= require_tree .
