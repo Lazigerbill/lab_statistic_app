@@ -33,6 +33,8 @@ GEM
       railties (~> 4.0)
     bootstrap-growl-rails (2.0.0)
     builder (3.2.2)
+    chart-js-rails (0.0.9)
+      railties (> 3.1)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.7)
@@ -157,6 +159,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-daterangepicker-rails
   bootstrap-growl-rails
+  chart-js-rails
   coffee-rails (~> 4.0.0)
   devise
   highcharts-rails (~> 3.0.0)

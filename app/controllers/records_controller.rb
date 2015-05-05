@@ -3,12 +3,14 @@ class RecordsController < ApplicationController
 
   
   def index
-    @records = Record.all
-    # @daysago = Record.created_after(7.days.ago)
-    @monthago = Record.created_after(1.month.ago)
-    respond_to do |format|
-      format.html
-      format.json {render :json => @records}
+    if params[:start] && params[:end]
+      @records = Record.created_within(params[:start], params[:end])
+      # respond_to do |format|
+      #   format.json {render :json => @result}
+      # end
+    else
+      @records = Record.all
+      # respond_to :html
     end
   end
 

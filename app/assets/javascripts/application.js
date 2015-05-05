@@ -24,4 +24,5 @@
 //= require highcharts
 //= require highcharts/highcharts-more 
 //= require daterangepicker
+//= require Chart
 //= require_tree .

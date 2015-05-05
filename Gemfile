@@ -51,3 +51,5 @@ gem 'bootstrap-growl-rails'
 gem 'jquery-datatables-rails', '~> 3.1.1'
 gem "highcharts-rails", "~> 3.0.0"
 gem 'bootstrap-daterangepicker-rails'
+gem 'chart-js-rails'
+
