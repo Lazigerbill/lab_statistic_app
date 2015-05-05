@@ -4,11 +4,11 @@ class RecordsController < ApplicationController
   
   def index
     @records = Record.all
-    @daysago = Record.created_after(7.days.ago)
+    # @daysago = Record.created_after(7.days.ago)
     @monthago = Record.created_after(1.month.ago)
     respond_to do |format|
       format.html
-      format.json {render :json => @monthago}
+      format.json {render :json => @records}
     end
   end
 
